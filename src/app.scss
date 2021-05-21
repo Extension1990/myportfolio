@@ -4,5 +4,30 @@
         width: 100%;
         height: calc(100vh - 70px);
         background-color: black;
+        position: relative;
+        top: 120px;
+        scroll-snap-type: y mandatory;
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        > * {
+            width: 100vw;
+            height: 100vh;
+            scroll-snap-align: start;
+        }
     }
+}
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
 }
